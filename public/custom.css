@@ -1,0 +1,348 @@
+:root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+  
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+  
+  /* Global Styles */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    color: hsl(var(--foreground));
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  
+  p {
+    color: hsl(var(--foreground));
+    line-height: 1.5;
+  }
+  
+  /* Links */
+  a {
+    color: hsl(var(--primary));
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: hsl(var(--primary) / 0.8);
+    text-decoration: none;
+  }
+  
+  /* Buttons */
+  .btn {
+    border-radius: var(--radius);
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  .btn:hover {
+    text-decoration: none;
+  }
+  
+  .btn:focus {
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.3);
+  }
+  
+  .btn-primary {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: hsl(var(--primary) / 0.9);
+  }
+  
+  .btn-secondary {
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    border: none;
+  }
+  
+  .btn-secondary:hover {
+    background-color: hsl(var(--secondary) / 0.8);
+  }
+  
+  /* Forms */
+  .form-control {
+    border-radius: var(--radius);
+    border-color: hsl(var(--border));
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+  
+  .form-control:focus {
+    border-color: hsl(var(--ring));
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.3);
+  }
+  
+  .form-check-input:checked {
+    background-color: hsl(var(--primary));
+    border-color: hsl(var(--primary));
+  }
+  
+  .form-select {
+    background-color: hsl(var(--background));
+    border-color: hsl(var(--border));
+    color: hsl(var(--foreground));
+  }
+  
+  .form-select:focus {
+    border-color: hsl(var(--ring));
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.3);
+  }
+  
+  /* Cards */
+  .card {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    border-radius: var(--radius);
+    border: 1px solid hsl(var(--border));
+  }
+  
+  /* Alerts */
+  .alert {
+    border-radius: var(--radius);
+  }
+  
+  .alert-primary {
+    background-color: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+    border-color: hsl(var(--primary) / 0.2);
+  }
+  
+  /* Navbars */
+  .navbar {
+    background-color: hsl(var(--background));
+    border-bottom: 1px solid hsl(var(--border));
+  }
+  
+  .navbar-light .navbar-nav .nav-link {
+    color: hsl(var(--foreground) / 0.7);
+  }
+  
+  .navbar-light .navbar-nav .nav-link:hover,
+  .navbar-light .navbar-nav .nav-link:focus {
+    color: hsl(var(--foreground));
+  }
+  
+  /* Tables */
+  .table {
+    color: hsl(var(--foreground));
+  }
+  
+  .table thead th {
+    border-bottom-color: hsl(var(--border));
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: hsl(var(--muted) / 0.3);
+  }
+  
+  /* Modals */
+  .modal-content {
+    background-color: hsl(var(--background));
+    border-radius: var(--radius);
+  }
+  
+  .modal-header {
+    border-bottom-color: hsl(var(--border));
+  }
+  
+  .modal-footer {
+    border-top-color: hsl(var(--border));
+  }
+  
+  /* Dropdowns */
+  .dropdown-menu {
+    background-color: hsl(var(--popover));
+    color: hsl(var(--popover-foreground));
+    border-radius: var(--radius);
+    border-color: hsl(var(--border));
+  }
+  
+  .dropdown-item {
+    color: hsl(var(--popover-foreground));
+  }
+  
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+  
+  /* Pagination */
+  .page-item.active .page-link {
+    background-color: hsl(var(--primary));
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+  
+  .page-link {
+    color: hsl(var(--primary));
+  }
+  
+  .page-link:hover {
+    color: hsl(var(--primary) / 0.8);
+    text-decoration: none;
+  }
+  
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+  
+  /* Additional form elements */
+  .form-range::-webkit-slider-thumb {
+    background-color: hsl(var(--primary));
+  }
+  
+  .form-range::-moz-range-thumb {
+    background-color: hsl(var(--primary));
+  }
+  
+  .form-check-input:focus {
+    border-color: hsl(var(--ring));
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.3);
+  }
+  
+  /* Badges */
+  .badge {
+    border-radius: var(--radius);
+  }
+  
+  .badge-primary {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+  
+  /* Progress bars */
+  .progress {
+    background-color: hsl(var(--muted));
+    border-radius: var(--radius);
+  }
+  
+  .progress-bar {
+    background-color: hsl(var(--primary));
+  }
+  
+  /* List groups */
+  .list-group-item {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    border-color: hsl(var(--border));
+  }
+  
+  .list-group-item-action:hover,
+  .list-group-item-action:focus {
+    background-color: hsl(var(--muted));
+  }
+  
+  /* Tooltips */
+  .tooltip .tooltip-inner {
+    background-color: hsl(var(--popover));
+    color: hsl(var(--popover-foreground));
+    border-radius: var(--radius);
+  }
+  
+  /* Popovers */
+  .popover {
+    background-color: hsl(var(--popover));
+    border-color: hsl(var(--border));
+    border-radius: var(--radius);
+  }
+  
+  .popover-header {
+    background-color: hsl(var(--muted));
+    border-bottom-color: hsl(var(--border));
+  }
+  
+  .popover-body {
+    color: hsl(var(--popover-foreground));
+  }
+  
+  /* Toasts */
+  .toast {
+    background-color: hsl(var(--background));
+    border-color: hsl(var(--border));
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .toast-header {
+    background-color: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+  }
+  
+  /* Accordion */
+  .accordion-button {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: hsl(var(--muted));
+    color: hsl(var(--foreground));
+  }
+  
+  .accordion-button:focus {
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.3);
+  }

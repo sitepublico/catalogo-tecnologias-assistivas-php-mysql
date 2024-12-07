@@ -1,0 +1,45 @@
+version: "3"
+services:
+  php-environment:
+    container_name: ci-php-apache
+    #image: php:8.3-apache
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - ./:/var/www/html/
+    ports:
+      - 8000:80
+    #command: >
+    #  bash -c "chmod -R 777 /var/www/html/writable && apache2-foreground"
+  db:
+    container_name: ci-db
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: sistema
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 123
+    ports:
+      - "9906:3306"
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: ci-phpmyadmin
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+    restart: always
+    ports:
+      - 8081:80
+
+# PARA INSTALAR CODEIGNITER
+# apt-get -y update && apt-get install -y nano libicu-dev && docker-php-ext-configure intl && docker-php-ext-install intl && docker-php-ext-install mysqli
+# altere o /etc/apache2/apache2.conf para habilitar "AllowOverride All"
+# sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
+# a2enmod rewrite
+# service apache2 restart
+# chmod -R 777 writable/
